@@ -5,7 +5,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: conn to remote ssh server
-              uses: appleboy/ssh-action@v2
+              uses: appleboy/ssh-action@v1
               with:
                 host:  ${{secrets.HOST}}
                 username: ${{secrets.USERNAME}}
