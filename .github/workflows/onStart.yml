@@ -13,7 +13,7 @@ jobs:
               username: ${{ secrets.USERNAME }}
               key: ${{ secrets.SSH }}
               port: ${{ secrets.PORT }}
-              source: "./ecosystem.config.js"
+              source: "ecosystem.config.js"
               target: "./test"
               strip_components: 1
   startJob:
