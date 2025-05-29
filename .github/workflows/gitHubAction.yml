@@ -23,7 +23,7 @@ jobs:
                 host: ${{secrets.HOST}}
                 username: ${{secrets.USERNAME}}
                 key: ${{secrets.SSH}}
-                fingerprint: ${{secrets.SSH}}
+                fingerprint: "3072 SHA256:CDZEXwbseYK6XliO7Jif+1vskhJjdrziP1U1oUZ2DUg test.devtools.digital (RSA)"
                 source: .
                 target: ~/test/a
                 direction: upload 
