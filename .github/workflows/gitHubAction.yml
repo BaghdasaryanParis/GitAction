@@ -1,4 +1,6 @@
 name: gitAction
+
+    
 on: push
 jobs:
     sshConn:
@@ -12,3 +14,15 @@ jobs:
                 port: ${{secrets.PORT}}
                 key: ${{secrets.SSH}}
                 script: whoami
+    sftpConn:
+        runs-on: ubuntu-latest
+        steps:
+            - name: conn with sftp proto 
+              uses: milanmk/actions-file-deployer@master
+              with:
+                remote-protocol: sftp
+                remote-host: ${{secrets.HOST}}
+                remote-user: ${{secrets.USERNAME}}
+                remote-port: 221
+                remote-key: ${{secrets.SSH}}
+                remote-path: ./test
