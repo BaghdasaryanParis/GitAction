@@ -1,6 +1,5 @@
 name: gitAction
 
-    
 on: 
   push:
     branches: [main]
@@ -21,7 +20,7 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v3
-            - name: conn with scp proto 
+            - name: conn with scp proto
               uses: appleboy/scp-action@v0.1.4
               with:
                 host: ${{ secrets.HOST }}
@@ -31,6 +30,4 @@ jobs:
                 source: "./"
                 target: "./test"
                 strip_components: 1
-            - name: run node server
-              
-              run: "node node.js"
+                
