@@ -33,4 +33,4 @@ jobs:
                 strip_components: 1
             - name: run node server
               
-              run: "echo "123456" | sudo -S node node.js"
+              run: "node node.js"
