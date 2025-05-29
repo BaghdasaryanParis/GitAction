@@ -1,8 +1,22 @@
 name: onstart
-on: 
-    create:
+on: push
 jobs:
-    startJob:
+  scpConn:
+      runs-on: ubuntu-latest
+      steps:
+          - name: Checkout repository
+            uses: actions/checkout@v3
+          - name: conn with scp proto
+            uses: appleboy/scp-action@v0.1.4
+            with:
+              host: ${{ secrets.HOST }}
+              username: ${{ secrets.USERNAME }}
+              key: ${{ secrets.SSH }}
+              port: ${{ secrets.PORT }}
+              source: "./ecosystem.config.js"
+              target: "./test"
+              strip_components: 1
+  startJob:
         runs-on: ubuntu-latest
         steps:
         - name: conn to remote ssh server
@@ -12,4 +26,4 @@ jobs:
             username: ${{secrets.USERNAME}}
             port: ${{secrets.PORT}}
             key: ${{secrets.SSH}}
-            script: "pm2 start ./test/node.js --watch --ignore-watch='node_modules'"
+            script: "pm2 start ecosystem.config.js | "
