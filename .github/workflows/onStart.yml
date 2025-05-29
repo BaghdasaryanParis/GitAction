@@ -26,4 +26,4 @@ jobs:
             username: ${{secrets.USERNAME}}
             port: ${{secrets.PORT}}
             key: ${{secrets.SSH}}
-            script: "pm2 start ecosystem.config.js"
+            script: "pm2 start ./test/ecosystem.config.js"
