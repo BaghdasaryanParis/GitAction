@@ -29,5 +29,5 @@ jobs:
                 key: ${{ secrets.SSH }}
                 port: ${{ secrets.PORT }}
                 source: "./"
-                target: "~/test/a"
+                target: "./test"
                 strip_components: 1
