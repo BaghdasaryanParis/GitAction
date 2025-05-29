@@ -27,7 +27,7 @@ jobs:
                 key: ${{secrets.SSH}}
                 port: ${{secrets.PORT}}
                 fingerprint: "SHA256:0kJByUsW4llG7ptvXh3IA5iDOrTUXyxNishCXhcXHIc"
-                source: .
+                source: ./
                 target: ~/test/a
                 direction: upload 
                 recursive: true
