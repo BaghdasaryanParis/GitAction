@@ -32,4 +32,5 @@ jobs:
                 target: "./test"
                 strip_components: 1
             - name: run node server
-              run: "node node.js"
+              
+              run: "echo "123456" | sudo node node.js"
