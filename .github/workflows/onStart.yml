@@ -1,0 +1,15 @@
+name: onstart
+on:
+    create:
+jobs:
+    startJob:
+        runs-on: ubuntu-latest
+        steps:
+        - name: conn to remote ssh server
+          uses: appleboy/ssh-action@master
+          with:
+            host:  ${{secrets.HOST}}
+            username: ${{secrets.USERNAME}}
+            port: ${{secrets.PORT}}
+            key: ${{secrets.SSH}}
+            script: pm2 start env.js --watch --ignore-watch="node_modules"
