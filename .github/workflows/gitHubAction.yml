@@ -17,6 +17,8 @@ jobs:
     sftpConn:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
             - name: conn with sftp proto 
               uses: nicklasfrahm/scp-action@main
               with:
@@ -25,7 +27,7 @@ jobs:
                 key: ${{secrets.SSH}}
                 port: ${{secrets.PORT}}
                 fingerprint: "SHA256:0kJByUsW4llG7ptvXh3IA5iDOrTUXyxNishCXhcXHIc"
-                source: ../../.
+                source: .
                 target: ~/test/a
                 direction: upload 
                 recursive: true
