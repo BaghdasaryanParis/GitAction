@@ -28,3 +28,4 @@ jobs:
                 source: .
                 target: ~/test/a
                 direction: upload 
+                recursive: true
