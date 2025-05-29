@@ -1,5 +1,6 @@
 name: onstart
-on: push
+on: 
+    create:
 jobs:
     startJob:
         runs-on: ubuntu-latest
@@ -11,4 +12,4 @@ jobs:
             username: ${{secrets.USERNAME}}
             port: ${{secrets.PORT}}
             key: ${{secrets.SSH}}
-            script: pm2 start ./test/node.js --watch --ignore-watch="node_modules"
+            script: "pm2 start ./test/node.js --watch --ignore-watch='node_modules'"
