@@ -12,7 +12,7 @@ jobs:
                 host:  ${{secrets.HOST}}
                 username: ${{secrets.USERNAME}}
                 port: ${{secrets.PORT}}
-                key: ${{secrets.SSH}}a
+                key: ${{secrets.SSH}}
                 script: whoami
     sftpConn:
         runs-on: ubuntu-latest
@@ -23,6 +23,7 @@ jobs:
                 host: ${{secrets.HOST}}
                 username: ${{secrets.USERNAME}}
                 key: ${{secrets.SSH}}
+                port: ${{secrets.PORT}}
                 fingerprint: "SHA256:0kJByUsW4llG7ptvXh3IA5iDOrTUXyxNishCXhcXHIc"
                 source: .
                 target: ~/test/a
