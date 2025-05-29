@@ -25,3 +25,4 @@ jobs:
                 key: ${{secrets.SSH}}
                 source: .
                 target: ~/test/a
+                direction: upload 
