@@ -24,4 +24,4 @@ jobs:
                 username: ${{secrets.USERNAME}}
                 key: ${{secrets.SSH}}
                 source: .
-                target: .
+                target: ~/test/a
