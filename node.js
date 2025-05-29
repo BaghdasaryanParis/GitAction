@@ -3,7 +3,7 @@ const http = require("http");
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("esel aaaaaaaanor asfsadfsadfadsgadsgadversion!\n");
+  res.end("esel ad!\n");
 });
 
 const PORT = 8080;
