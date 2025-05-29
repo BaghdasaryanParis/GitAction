@@ -12,17 +12,16 @@ jobs:
                 host:  ${{secrets.HOST}}
                 username: ${{secrets.USERNAME}}
                 port: ${{secrets.PORT}}
-                key: ${{secrets.SSH}}
+                key: ${{secrets.SSH}}a
                 script: whoami
     sftpConn:
         runs-on: ubuntu-latest
         steps:
             - name: conn with sftp proto 
-              uses: milanmk/actions-file-deployer@master
+              uses: nicklasfrahm/scp-action@main
               with:
-                remote-protocol: sftp
-                remote-host: ${{secrets.HOST}}
-                remote-user: ${{secrets.USERNAME}}
-                remote-port: 221
-                remote-key: ${{secrets.SSH}}
-                remote-path: ./test
+                host: ${{secrets.HOST}}
+                username: ${{secrets.USERNAME}}
+                key: ${{secrets.SSH}}
+                source: ./
+                target: ./
