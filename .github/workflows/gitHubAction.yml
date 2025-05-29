@@ -23,5 +23,5 @@ jobs:
                 host: ${{secrets.HOST}}
                 username: ${{secrets.USERNAME}}
                 key: ${{secrets.SSH}}
-                source: ./
-                target: ./
+                source: .
+                target: .
