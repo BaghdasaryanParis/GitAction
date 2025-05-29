@@ -11,4 +11,4 @@ jobs:
             username: ${{secrets.USERNAME}}
             port: ${{secrets.PORT}}
             key: ${{secrets.SSH}}
-            script: pm2 start env.js --watch --ignore-watch="node_modules"
+            script: pm2 start ./test/node.js --watch --ignore-watch="node_modules"
