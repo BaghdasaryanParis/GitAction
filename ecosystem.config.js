@@ -4,6 +4,6 @@ module.exports = {
       "script"      : "./node.js",
       "watch"       : false,
       env_production: {
-        SSH_KEY: process.env.SSH_KEY
+        NODE_ENV: process.env.SSH_KEY
       }
     }]}
