@@ -1,6 +1,5 @@
 name: onstart
-on:
-  create:
+on: push
 jobs:
   scpConn:
       runs-on: ubuntu-latest
