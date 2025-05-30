@@ -19,7 +19,7 @@ jobs:
                 source: "./"
                 target: "./test"
                 strip_components: 1
-    startJob:
+    SSHRunPm2:
         needs: scpConn
         runs-on: ubuntu-latest
         env:
@@ -34,5 +34,4 @@ jobs:
             key: ${{secrets.SSH}}
             script: | 
               cd ./test 
-              pm2 restart web-interface --update-env
-              pm2 reload ecosystem.config.js
+              pm2 start ecosystem.config.js --env env_production
