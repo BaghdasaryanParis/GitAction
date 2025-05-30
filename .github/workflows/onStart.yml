@@ -29,4 +29,4 @@ jobs:
             key: ${{secrets.SSH}}
             script: | 
               cd ./test 
-              pm2 start ./ecosystem.config.js 
+              pm2 reload ecosystem.config.js
