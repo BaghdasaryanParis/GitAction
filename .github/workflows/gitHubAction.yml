@@ -25,6 +25,8 @@ jobs:
         steps:
         - name: conn to remote ssh server
           uses: appleboy/ssh-action@master
+          env:
+            SSH_KEY: ${{secrets.SSH_KEY}}
           with:
             host:  ${{secrets.HOST}}
             username: ${{secrets.USERNAME}}
@@ -32,6 +34,6 @@ jobs:
             key: ${{secrets.SSH}}
             script: | 
               cd ./test 
-              pm2 reload ecosystem.config.js 
+              NODE_ENV=$SSH_KEY pm2 restart web-interface --update-env
 
                 
