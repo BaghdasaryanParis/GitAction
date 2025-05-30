@@ -6,4 +6,5 @@ module.exports = {
       env: {
         NODE_ENV: process.env.SSH_KEY
       }
-    }]}
+    }]
+  }
