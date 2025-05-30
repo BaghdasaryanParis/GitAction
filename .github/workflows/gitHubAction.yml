@@ -23,7 +23,7 @@ jobs:
         needs: scpConn
         runs-on: ubuntu-latest
         env:
-          SSH_KEY: ${{vars.SSH_KEY}}
+          SSH_KEY: ${{secrets.SSH}}
         steps:
         - name: conn to remote ssh server
           uses: appleboy/ssh-action@master
@@ -35,5 +35,4 @@ jobs:
               script: | 
                 cd ./test 
                 export SSH_KEY="$SSH_KEY"
-                pm2 restart ecosystem.config.js --update-env
-                pm2 restart ecosystem.config.js --env env_production
+                pm2 restart ecosystem.config.js --env env_production --update-env
