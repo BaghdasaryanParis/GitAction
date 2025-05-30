@@ -20,6 +20,7 @@ jobs:
                 target: "./test"
                 strip_components: 1
     startJob:
+        needs: scpConn
         runs-on: ubuntu-latest
         steps:
         - name: conn to remote ssh server
