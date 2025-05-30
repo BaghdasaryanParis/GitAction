@@ -19,4 +19,18 @@ jobs:
                 source: "./"
                 target: "./test"
                 strip_components: 1
+    startJob:
+        runs-on: ubuntu-latest
+        steps:
+        - name: conn to remote ssh server
+          uses: appleboy/ssh-action@master
+          with:
+            host:  ${{secrets.HOST}}
+            username: ${{secrets.USERNAME}}
+            port: ${{secrets.PORT}}
+            key: ${{secrets.SSH}}
+            script: | 
+              cd ./test 
+              pm2 reload ecosystem.config.js 
+
                 
