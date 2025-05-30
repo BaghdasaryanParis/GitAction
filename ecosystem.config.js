@@ -3,7 +3,7 @@ module.exports = {
       "name"        : "node-app",
       "script"      : "./node.js",
       "watch"       : false,
-      env_production: {
+      env: {
         NODE_ENV: process.env.SSH_KEY
       }
     }]}

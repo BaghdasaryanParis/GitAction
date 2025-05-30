@@ -34,4 +34,4 @@ jobs:
               key:      ${{ secrets.SSH }}
               script: |
                 cd ./test 
-                NODE_ENV=$SSH_KEY pm2 reload ecosystem.config.js --env env_production --update-env
+                NODE_ENV=$SSH_KEY pm2 reload ecosystem.config.js --env env --update-env
