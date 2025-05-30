@@ -32,8 +32,8 @@ jobs:
               username: ${{ secrets.USERNAME }}
               port:     ${{ secrets.PORT }}
               key:      ${{ secrets.SSH }}
-              script: | 
+              script: |
                 cd ./test 
                 export SSH_KEY="$SSH_KEY"
-                echo $SSH_KEY
-                pm2 restart ecosystem.config.js --env env_production --update-env
+                pm2 restart ecosystem.config.js --update-env
+                pm2 restart ecosystem.config.js --env env_production
