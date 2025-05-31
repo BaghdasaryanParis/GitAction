@@ -6,7 +6,7 @@
 
     "env": {
       "NODE_ENV": "development",
-      "SSH_KEY": "$SSH_KEY"
+      "SSH_KEY": "${SSH_KEY}"
     },
     "env_production": {
       "NODE_ENV": "production",
