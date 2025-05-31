@@ -31,4 +31,4 @@ jobs:
                 cd ./test 
                 export SSH_KEY="${{secrets.SSH}}" 
                 envsubst < ecosystem.config.json
-                pm2 reload ecosystem.config.js --env production --update-env
+                pm2 reload ecosystem.config.json --env production --update-env

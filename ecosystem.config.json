@@ -10,7 +10,7 @@
     },
     "env_production": {
       "NODE_ENV": "production",
-      "SSH_KEY": "$SSH_KEY"
+      "SSH_KEY": "${SSH_KEY}"
     }
   }]
 }
