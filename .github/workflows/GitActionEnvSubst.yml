@@ -1,9 +1,7 @@
-name: gitAction
-
-on: 
-  create:
+name: GitActionEnvSubst
+on: push
 jobs:
-    scpConn:
+    scpAddFiles:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout repository
@@ -19,9 +17,8 @@ jobs:
                 target: "./test"
                 strip_components: 1
     SSHRunPm2:
-        needs: scpConn
+        needs: scpAddFiles
         runs-on: ubuntu-latest
-
         steps:
         - name: conn to remote ssh server
           uses: appleboy/ssh-action@master
@@ -33,4 +30,5 @@ jobs:
               script: |
                 cd ./test 
                 export SSH_KEY="${{secrets.SSH}}" 
+                envsubst < ecosystem.config.json
                 pm2 reload ecosystem.config.js --env production --update-env
