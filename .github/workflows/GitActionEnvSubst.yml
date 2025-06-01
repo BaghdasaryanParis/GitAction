@@ -32,6 +32,5 @@ jobs:
                 export SSH_KEY=${{secrets.SSH}}
                 set -a
                 source .env
-                set +a
                 envsubst < ecosystem.config.tamplate.json > ecosystem.config.json
                 pm2 reload ecosystem.config.json --env production --update-env
