@@ -29,7 +29,7 @@ jobs:
               key:      ${{ secrets.SSH }}
               script: |
                 cd ./test 
-                export SSH_KEY=${{secrets.SSH}}
+                export SSH_KEY=${{secrets.HOST}}
                 set -a
                 source .env
                 envsubst < ecosystem.config.tamplate.json > ecosystem.config.json
